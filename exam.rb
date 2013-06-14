@@ -3,7 +3,24 @@ require 'pp'
 # Started a class to hold methods
 class Neil
 
-	attr_accessor :fun_rating
+	# Added some nice variables
+	attr_accessor :fun_rating, :my_favorite_number, :my_favorite_color, :my_array
+
+	def initalize(fun_rating, my_array)
+		@fun_rating = 0
+		# My hash of pets I know
+		@my_hash = {
+			"Lemon" => "cat",
+			"LuLu" => "cat",
+			"Molly" => "dog",
+			"Stella" => "dog"
+		}
+		# My array of childhood things
+		@my_array = [
+			"Stretch Armstrong", "My Buddy", "Power Wheels", "G.I. Joes", "Hot Wheels", "Apple IIe", "Nintendo", "Pluto", "Goofy", "He-Man", "Dorf", "Gummy Bears"
+		]
+	end
+
 	# Started a method to do the FizzBuzz challenge
 	def fizzbuzz(num)
 		0.upto(num) do |i|
@@ -54,6 +71,17 @@ class Neil
 		end
 	end
 
+	def favorite_number(my_favorite_number)
+		puts "What is your favorite number?"
+		puts "My favorite number is: #{my_favorite_number}"
+	end
+
+	def favorite_color(my_favorite_color)
+		puts "My favorite color is: #{my_favorite_color}"
+	end
+
+	puts @my_array
+
 end
 
 # Created an instance of the class
@@ -61,3 +89,8 @@ neil = Neil.new
 # Used a method on the instance neil
 neil.fizzbuzz(10)
 neil.talk_to('run', 'yes')
+neil.favorite_number(42)
+neil.favorite_color('blue')
+
+
+
