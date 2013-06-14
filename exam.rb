@@ -4,21 +4,10 @@ require 'pp'
 class Neil
 
 	# Added some nice variables
-	attr_accessor :fun_rating, :my_favorite_number, :my_favorite_color, :my_array
+	attr_accessor :fun_rating, :my_favorite_number
 
 	def initalize(fun_rating, my_array)
 		@fun_rating = 0
-		# My hash of pets I know
-		@my_hash = {
-			"Lemon" => "cat",
-			"LuLu" => "cat",
-			"Molly" => "dog",
-			"Stella" => "dog"
-		}
-		# My array of childhood things
-		@my_array = [
-			"Stretch Armstrong", "My Buddy", "Power Wheels", "G.I. Joes", "Hot Wheels", "Apple IIe", "Nintendo", "Pluto", "Goofy", "He-Man", "Dorf", "Gummy Bears"
-		]
 	end
 
 	# Started a method to do the FizzBuzz challenge
@@ -80,7 +69,27 @@ class Neil
 		puts "My favorite color is: #{my_favorite_color}"
 	end
 
-	puts @my_array
+	def childhood
+		# My array of childhood things
+		@my_array = [
+			"Stretch Armstrong", "My Buddy", "Power Wheels", "G.I. Joes", "Hot Wheels", "Apple IIe", "Nintendo", "Pluto", "Goofy", "He-Man", "Dorf", "Gummy Bears"
+		]
+		@my_array.each do |i|
+			puts i
+		end
+	end
+
+	def pets
+		# My hash of pets I know
+		@my_hash = {
+			"Lemon" => "cat",
+			"LuLu" => "cat",
+			"Guy" => "cat",
+			"Molly" => "dog",
+			"Stella" => "dog"
+		}
+		@my_hash.each_key {|k| puts k}
+	end
 
 end
 
@@ -91,6 +100,16 @@ neil.fizzbuzz(10)
 neil.talk_to('run', 'yes')
 neil.favorite_number(42)
 neil.favorite_color('blue')
+neil.childhood
+neil.pets
+
+# Steps for creating an algorithms:
+# 1. Requirements
+# 2. Tools
+# 3. Whiteboard
+# 4. Test/Spec
+# 5. Code
+# 6. Refactor
 
 
 
